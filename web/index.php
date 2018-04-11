@@ -50,6 +50,7 @@ $app->run();
      			echo "\t\t<td>".$tareas["id"]."</td>\n";
      			echo "\t\t<td>".$tareas['nombre']."</td>\n";
      			echo "\t</tr>\n";
+          echo "<br>";
      		}
     }
 ?>
