@@ -26,7 +26,7 @@ $app->run();
        $dbname = "dabupu3k2ssbpf";
        $username = "mdzqcusnhqhhmm";
        $pw = "dbb42c0d15296e4827cb89d386f4bc6434d4e9c519927fc1b3edf1c013f99a2d";
-       $pdo = new PDO ("mysql:host=$hostname;dbname='$dbname','$username','$pw'");
+       $pdo = new PDO ("pgsql:host=$hostname;dbname='$dbname','$username','$pw'");
   }catch (PDOException $e){
        echo "Failed to get DB handle: ".$e->getMessage()."\n";
        exit;
