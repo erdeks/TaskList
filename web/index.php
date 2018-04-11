@@ -31,13 +31,6 @@ $app->run();
        echo "Failed to get DB handle: ".$e->getMessage()."\n";
        exit;
   }
-  $sql = "CREATE TABLE IF NOT EXISTS tasks(
-    id int(11) NOT NULL AUTO_INCREMENT,
-    nombre varchar(40),
-    done int(1),
-    primary key (id))";
-  $query = $pdo -> prepare($sql);
-  $query -> execute();
 ?>
 <form action="index.php" method="post">
   <input type="text" name="tarea" placeholder="Escribe tu tarea aqui">
