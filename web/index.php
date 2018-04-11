@@ -42,15 +42,15 @@ $app->run();
       $query = $pdo->prepare("INSERT INTO tasks (nombre, done) VALUES('$task', 0)");
       $query->execute();
 
-      $sql="Select * from tasks";
-      $query = $pdo -> prepare($sql);
-      $query -> execute();
-      while( $tareas = $query->fetch()){
-     			echo "\t<tr>\n";
-     			echo "\t\t<td>".$tareas["id"]."</td>\n";
-     			echo "\t\t<td>".$tareas['nombre']."</td>\n";
-     			echo "\t</tr>\n";
-          echo "<br>";
-     		}
+    }
+    $sql="Select * from tasks";
+    $query = $pdo -> prepare($sql);
+    $query -> execute();
+    while( $tareas = $query->fetch()){
+        echo "\t<tr>\n";
+        echo "\t\t<td>".$tareas["id"]."</td>\n";
+        echo "\t\t<td>".$tareas['nombre']."</td>\n";
+        echo "\t</tr>\n";
+        echo "<br>";
     }
 ?>
