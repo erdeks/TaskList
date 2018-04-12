@@ -37,6 +37,7 @@ $app->run();
   <input type="submit" value="Crear">
 </form>
 <table>
+<thead><td colspan='2'>Para Hacer</td></thead>;
 <?php
   if ( isset( $_POST['tarea'] ) && $_POST['tarea'] !== "" ) {
       $task = $_POST['tarea'];
@@ -50,7 +51,7 @@ $app->run();
     while( $tareas = $query->fetch()){
       $id=$tareas['id'];
       if($tareas['done']==0){
-        echo "<thead><td colspan='2'>Para Hacer</td></thead>";
+
         echo "<tr>";
         echo "<td>".$tareas["id"]."</td>";
         echo "<td>".$tareas['nombre']."</td>";
