@@ -38,7 +38,6 @@
         $id=$tareas['id'];
         if($tareas['done']==0){
           echo "<tr>";
-          echo "<td>".$tareas["id"]."</td>";
           echo "<td>".$tareas['nombre']."</td>";
           echo "<td><a href='do.php?id=$id'>Hacer</a></td>";
           echo "<td><a href='delete.php?id=$id'>Eliminar</a></td>";
@@ -56,7 +55,6 @@
       $id=$tareas['id'];
       if($tareas['done']==1){
         echo "<tr>";
-        echo "<td>".$tareas["id"]."</td>";
         echo "<td>".$tareas['nombre']."</td>";
         echo "<td><a href='undo.php?id=$id'>Deshacer</a></td>";
         echo "<td><a href='delete.php?id=$id'>Eliminar</a></td>";
