@@ -49,6 +49,7 @@ $app->run();
     while( $tareas = $query->fetch()){
       $id=$tareas['id'];
       if($tareas['done']==0){
+        echo "<thead><td colspan='2'>Para Hacer</td></thead>";
         echo "<tr>";
         echo "<td>".$tareas["id"]."</td>";
         echo "<td>".$tareas['nombre']."</td>";
@@ -57,6 +58,7 @@ $app->run();
         echo "</tr>";
         echo "<br>";
       }else{
+        echo "<thead><td colspan='2'>Hecho</td></thead>";
         echo "<tr>";
         echo "<td>".$tareas["id"]."</td>";
         echo "<td>".$tareas['nombre']."</td>";
