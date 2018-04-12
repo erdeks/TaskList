@@ -9,7 +9,8 @@
        echo "Failed to get DB handle: ".$e->getMessage()."\n";
        exit;
   }
-  $sql="UPDATE tasks SET done=1 WHERE id=$_GET['id']";
+  $id=$_GET['id'];
+  $sql="UPDATE tasks SET done=1 WHERE id='$id'";
   $query = $pdo -> prepare($sql);
   $query -> execute();
   header('Location: '.index.php);
