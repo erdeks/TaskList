@@ -36,6 +36,7 @@ $app->run();
   <input type="text" name="tarea" placeholder="Escribe tu tarea aqui">
   <input type="submit" value="Crear">
 </form>
+<table>
 <?php
   if ( isset( $_POST['tarea'] ) && $_POST['tarea'] !== "" ) {
       $task = $_POST['tarea'];
@@ -70,3 +71,4 @@ $app->run();
 
     }
 ?>
+</table>
