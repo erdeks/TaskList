@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="css/tablas.css" />
 <?php
   try {
        $hostname = "ec2-54-83-19-244.compute-1.amazonaws.com";
@@ -36,17 +37,22 @@
         echo "<td><a href='delete.php?id=$id'>Eliminar</a></td>";
         echo "</tr>";
         echo "<br>";
-      }else{
-        echo "<thead><td colspan='2'>Hecho</td></thead>";
-        echo "<tr>";
-        echo "<td>".$tareas["id"]."</td>";
-        echo "<td>".$tareas['nombre']."</td>";
-        echo "<td><a href='undo.php?id=$id'>Deshacer</a></td>";
-        echo "<td><a href='delete.php?id=$id'>Eliminar</a></td>";
-        echo "</tr>";
-        echo "<br>";
       }
-
+    }
+?>
+<thead><td colspan='2'>Hecho</td></thead>
+<?php
+  while( $tareas = $query->fetch()){
+    $id=$tareas['id'];
+    if($tareas['done']==1){
+      echo "<tr>";
+      echo "<td>".$tareas["id"]."</td>";
+      echo "<td>".$tareas['nombre']."</td>";
+      echo "<td><a href='undo.php?id=$id'>Deshacer</a></td>";
+      echo "<td><a href='delete.php?id=$id'>Eliminar</a></td>";
+      echo "</tr>";
+      echo "<br>";
+      }
     }
 ?>
 </table>
