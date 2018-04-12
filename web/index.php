@@ -29,12 +29,11 @@
     while( $tareas = $query->fetch()){
       $id=$tareas['id'];
       if($tareas['done']==0){
-
         echo "<tr>";
         echo "<td>".$tareas["id"]."</td>";
         echo "<td>".$tareas['nombre']."</td>";
         echo "<td><a href='do.php?id=$id'>Hacer</a></td>";
-        echo "<td><a href='eliminar.php?id=$id'>Eliminar</a></td>";
+        echo "<td><a href='delete.php?id=$id'>Eliminar</a></td>";
         echo "</tr>";
         echo "<br>";
       }else{
