@@ -47,10 +47,24 @@ $app->run();
     $query = $pdo -> prepare($sql);
     $query -> execute();
     while( $tareas = $query->fetch()){
-        echo "\t<tr>\n";
-        echo "\t\t<td>".$tareas["id"]."</td>\n";
-        echo "\t\t<td>".$tareas['nombre']."</td>\n";
-        echo "\t</tr>\n";
+      $id=$tareas['id'];
+      if($tareas['done']==0){
+        echo "<tr>";
+        echo "<td>".$tareas["id"]."</td>";
+        echo "<td>".$tareas['nombre']."</td>";
+        echo "<td><a href='do.php?id=$id'>Hacer</a></td>";
+        echo "<td><a href='eliminar.php?id=$id'>Eliminar</a></td>";
+        echo "</tr>";
         echo "<br>";
+      }else{
+        echo "<tr>";
+        echo "<td>".$tareas["id"]."</td>";
+        echo "<td>".$tareas['nombre']."</td>";
+        echo "<td><a href='undo.php?id=$id'>Deshacer</a></td>";
+        echo "<td><a href='eliminar.php?id=$id'>Eliminar</a></td>";
+        echo "</tr>";
+        echo "<br>";
+      }
+
     }
 ?>
