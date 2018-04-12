@@ -43,7 +43,7 @@
         echo "<td>".$tareas["id"]."</td>";
         echo "<td>".$tareas['nombre']."</td>";
         echo "<td><a href='undo.php?id=$id'>Deshacer</a></td>";
-        echo "<td><a href='eliminar.php?id=$id'>Eliminar</a></td>";
+        echo "<td><a href='delete.php?id=$id'>Eliminar</a></td>";
         echo "</tr>";
         echo "<br>";
       }
