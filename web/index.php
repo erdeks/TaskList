@@ -1,26 +1,4 @@
 <?php
-/*
-require('../vendor/autoload.php');
-
-$app = new Silex\Application();
-$app['debug'] = true;
-
-// Register the monolog logging service
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-  'monolog.logfile' => 'php://stderr',
-));
-
-$app->get('/cowsay', function() use($app) {
-  $app['monolog']->addDebug('cowsay');
-  return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
-});
-$app->get('/', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
-  return str_repeat('Hello', getenv('TIMES'));
-});
-
-$app->run();
-*/
   try {
        $hostname = "ec2-54-83-19-244.compute-1.amazonaws.com";
        $dbname = "dabupu3k2ssbpf";
@@ -37,7 +15,7 @@ $app->run();
   <input type="submit" value="Crear">
 </form>
 <table>
-<thead><td colspan='2'>Para Hacer</td></thead>;
+<thead><td colspan='2'>Para Hacer</td></thead>
 <?php
   if ( isset( $_POST['tarea'] ) && $_POST['tarea'] !== "" ) {
       $task = $_POST['tarea'];
